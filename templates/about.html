@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <h2>This is the about page. </h2>
+        <p>Feel free to meet other people! </p>
+        <p> The creator of this page is {{author}}</p>
+
+        {% if coauthor %}
+            <p>This Page has a CoAuthor.</p>
+        {% else %}
+            <p>This Page does not have a  CoAuthor.</p>
+        {% endif %}
+
+        {%for post in posts %}
+            <h2>{{post.Name}}</h2>
+            <h3>The User has {{post.Friends}} friends</h3>
+        {% endfor %}
+{% endblock %}
